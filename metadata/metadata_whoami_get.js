@@ -1,4 +1,4 @@
-// these packages allow the script to run on node.js, they are not required for browser use.
+// These packages allow the script to run on node.js, they are not required for browser use.
 const fetch = require('cross-fetch');
 
 // Remember, the JWT access token must be securely store - this example uses an environment variable

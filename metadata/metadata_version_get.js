@@ -1,4 +1,4 @@
-// these packages allow the script to run on node.js, they are not required for browser use.
+// These packages allow the script to run on node.js, they are not required for browser use.
 const fetch = require('cross-fetch');
 
 const options = { method: 'GET', headers: { Accept: 'text/plain' } };
