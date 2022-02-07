@@ -13,4 +13,4 @@ We will continue adding examples as the API develops. For more details see our [
 
 ## JavaScript environment
 
-The exmaples in this repository were developed and tested using node.js v17.1.0, some of the packages used will not be neccessary for front end applications. The code is fairly generic and should be easily adaptable to a variety of JavaScript implementations and frameworks.
+The examples in this repository were developed and tested using node.js v17.1.0, some of the packages used will not be neccessary for front end applications. The code is fairly generic and should be easily adaptable to a variety of JavaScript implementations and frameworks.
