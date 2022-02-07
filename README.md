@@ -4,8 +4,10 @@ This repository contains Javascript code examples using the MoneyMoov API. The e
 
 Each subfolder contains examples of the api endpoints associated with a group of functions:
 
+- accounts: list accounts and account transactions
 - metadata: useful for API troubleshooting and diagnostics
 - payouts: endpoints for creating and approving payouts (the sending of funds)
+- transfers: send funds between accounts belonging to the same merchant
 
 We will continue adding examples as the API develops. For more details see our [API documentation](https://docs.nofrixion.com)
 
