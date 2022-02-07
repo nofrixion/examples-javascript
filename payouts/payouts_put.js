@@ -1,3 +1,5 @@
+// Updates an existing payout
+
 // These packages allow the code to run on Node.js, they aren't required if running in a browser.
 const fetch = require('cross-fetch');
 const FormData = require('form-data');
