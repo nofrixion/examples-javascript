@@ -9,7 +9,7 @@
 // 2. Set the token as an environment variable in your console:
 //    set NOFRIXION_SANDBOX_TOKEN=<JWT token from previous step>
 // 3. Run the script in a browser or using node.js
-// 4. If successful a list of transactions will be displayed.
+// 4. If successful a list of transactions and some metadata will be displayed.
 //-----------------------------------------------------------------------------
 
 // This package allows the script to run on node.js, not required for browser use.
@@ -23,9 +23,6 @@ var accountId = 'A120P0JR';
 
 // by default each call will return 20 transactions, we can change this using a query parameter as shown below.
 var queryParams = '?size=10'
-
-// the example below would return the page of 10 transactions following the options set above.
-// var queryParams = '/transactions?size=10&page=1'
 
 var url = `https://api-sandbox.nofrixion.com/api/v1/accounts/${accountId}/transactions${queryParams}`;
 
