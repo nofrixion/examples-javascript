@@ -27,7 +27,7 @@ fetch(url, options)
     .then(responseJson => {
         // Returns JSON objects containing basic details about the user's current merchant context and an array of 
         // also authorised merchants.
-        console.log(responseJson);
+        console.log(responseJson.merchants);
         // If an array of merchant id's associated with the current user is all that is required extract as follows:
         var merchantIds = responseJson.merchants.map(merchant => merchant.id);
         console.log(merchantIds)

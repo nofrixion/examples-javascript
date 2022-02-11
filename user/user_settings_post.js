@@ -10,7 +10,8 @@
 // 2. Set the token as an environment variable in your console:
 //    set NOFRIXION_SANDBOX_TOKEN=<JWT token from previous step>
 // 3. Run the script in a browser or using node.js
-// 4. If successful user settings will be displayed as an array of JSON objects.
+// 4. If successful HTTP status "200" will be displayed (and the new settings can be retrieved
+//    using the user/settings GET method).
 //-----------------------------------------------------------------------------
 
 // These modules allow the code to run on Node.js, they aren't required if running in a browser.
@@ -34,7 +35,6 @@ const options = {
     },
     body: data
 };
-
 
 fetch(url, options)
     // status 200 on success
