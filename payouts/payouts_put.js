@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 // Description: Example of calling the NoFrixion MoneyMoov API payouts PUT 
-// method. It provides a convenient way to modify a previously created payout
+// method. It provides a convenient way to modify a previously created payout.
 //
 // Usage:
 // 1. Create a user access token in the sandbox portal at:
