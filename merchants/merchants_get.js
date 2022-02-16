@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Description: Example of calling the NoFrixion MoneyMoov API user/merchants 
+// Description: Example of calling the NoFrixion MoneyMoov API merchants 
 // GET method. It provides a convenient way to retrieve a merchants authorised
 // for the authenticated user.
 //
@@ -16,11 +16,11 @@
 const fetch = require('cross-fetch');
 
 // Remember, the JWT access token must be securely store - this example uses an environment variable
-const jwtToken = process.env.NOFRIXION_SANDBOX_TOKEN;
+const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
-const url = 'https://api-sandbox.nofrixion.com/api/v1/user/merchants';
+const url = 'https://api-sandbox.nofrixion.com/api/v1/merchants';
 
-const options = { method: 'GET', headers: { Accept: 'text/plain', Authorization: 'Bearer ' + jwtToken } };
+const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
 fetch(url, options)
     .then(response => response.json())

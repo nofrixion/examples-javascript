@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Description: Example of calling the NoFrixion MoneyMoov API merchant/tokens DELETE 
+// Description: Example of calling the NoFrixion MoneyMoov API merchants/tokens DELETE 
 // method. It provides a convenient way to delete a merchant token.
 //
 // Usage:
@@ -16,12 +16,12 @@
 const fetch = require("cross-fetch");
 
 // Remember, the JWT access token must be securely store - this example uses an environment variable
-const jwtToken = process.env.NOFRIXION_SANDBOX_TOKEN;
+const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
-const url = 'https://api-sandbox.nofrixion.com/api/v1/merchant/tokens';
+const url = 'https://api-sandbox.nofrixion.com/api/v1/merchants/tokens';
 
 // need to specify tokenId to delete
-var tokenId = "e5f44b34-139a-496f-83f9-f44422ea5644";
+var tokenId = "38baa438-88da-4f19-bb1c-03ad6384901f";
 
 const options = {
     method: "DELETE",

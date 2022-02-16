@@ -16,14 +16,14 @@
 const fetch = require('cross-fetch');
 
 // Remember, the JWT access token must be securely store - this example uses an environment variable
-const jwtToken = process.env.NOFRIXION_SANDBOX_TOKEN;
+const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
-const url = 'https://api-sandbox.nofrixion.com/api/v1/merchant/tokens';
-var merchantId = 'a234eb2e-1118-4a69-b550-e945961790ab';
+const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/merchants';
+var merchantId = 'ab4476a1-8364-4d13-91ce-f4c4ca4ee6be';
 
-const options = { method: 'GET', headers: { Accept: 'text/plain', Authorization: 'Bearer ' + jwtToken } };
+const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
-fetch(`${url}/${merchantId}`, options)
+fetch(`${baseUrl}/${merchantId}/tokens`, options)
     .then(response => response.json())
     .then(responseJson => {
         // Returns JSON array of merchant tokens.
