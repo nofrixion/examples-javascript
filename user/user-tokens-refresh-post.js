@@ -35,6 +35,6 @@ const options = {
 
 fetch(url, options)
     .then(response => response.json())
-    // the response json ...
+    // the json response contains the new user token (accessToken) and a new refresh token (refreshToken)
     .then(response => console.log(response))
     .catch(err => console.error(err));
