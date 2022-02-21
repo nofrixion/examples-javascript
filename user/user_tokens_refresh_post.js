@@ -18,11 +18,11 @@ const FormData = require('form-data');
 // Remember, the JWT access token must be securely store - this example uses an environment variable
 const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
-const url = 'https://api-sandbox.nofrixion.com/api/v1/user/tokens/refresh';
+const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/user/tokens/refresh';
 
 // Example form data
 const formData = new FormData();
-formData.append("refreshToken", "AFNmCy_fXXQPViPaHNb5GQSpeMrKNAfLwIfzZl_BzGCZv");
+formData.append('refreshToken', 'v1.Mumv0QKNnuszGS96ZKxBHSZrZQVItqgWOk46LToOlYN3PeeqOKyWqBUofJOCxXgdvqVBq8WOuXlIilBTlO0rcKc');
 
 const options = {
     method: 'POST',
@@ -33,7 +33,7 @@ const options = {
     body: formData
 };
 
-fetch(url, options)
+fetch(baseUrl, options)
     .then(response => response.json())
     // the json response contains the new user token (accessToken) and a new refresh token (refreshToken)
     .then(response => console.log(response))
