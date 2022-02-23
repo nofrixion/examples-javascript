@@ -38,11 +38,7 @@ var options = {
 };
 
 fetch(`${baseUrl}/${paymentRequestID}/pisp`, options)
-    .then(response => {
-        // status "200" (OK) on success
-        console.log(response.status)
-        return response.json()
-    })
-    // the response text is the payout ID of the newly created payout.
+    .then(response => response.json())
+    // Payment initiation ID and redirect URL will be returned in JSON response object.
     .then(responseJson => console.log(responseJson))
     .catch(err => console.error(err));

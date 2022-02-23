@@ -9,7 +9,6 @@
 // 2. Set the token as an environment variable in your console:
 //    set NOFRIXION_MERCHANT_TOKEN=<JWT token from previous step>
 // 3. Run the script in a browser or using node.js
-
 // 4. If successful user a list of PISP providers will be displayed.
 //-----------------------------------------------------------------------------
 
