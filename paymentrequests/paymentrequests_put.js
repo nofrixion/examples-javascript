@@ -25,7 +25,7 @@ const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/paymentrequests';
 const form = new FormData();
 form.append('MerchantID', 'AB4476A1-8364-4D13-91CE-F4C4CA4EE6BE');
 form.append('Amount', '1.99');
-form.append('Currency', 'EUR');
+form.append('Currency', 'GBP');
 form.append('CustomerID', 'C202202024158');
 form.append('OrderID', 'Sample order');
 form.append('PaymentMethodTypes', 'card,pisp'); // BTC lightning payments coming soon!
@@ -34,7 +34,7 @@ form.append('Description', 'Updated payment request');
 form.append('OriginUrl', 'https://some.origin.url');
 form.append('CallbackUrl', 'https://some.callback.url');
 // PISP specific fields
-form.append('PispAccountID', 'A120P0JR');
+form.append('PispAccountID', 'A120P0JQ');
 form.append('PispRecipientReference', 'Recipient ref');
 // Card specific fields
 form.append('CardAuthorizeOnly', 'true');
@@ -53,7 +53,7 @@ const options = {
     body: form
 };
 
-var paymentRequestID  = '969b0c5c-8804-4c43-11f3-08d9f4f51c4a'
+var paymentRequestID  = '7ec3edac-8fbb-4bfa-11f4-08d9f4f51c4a'
 
 fetch(`${baseUrl}/${paymentRequestID}`, options)
     .then(response => response.json())

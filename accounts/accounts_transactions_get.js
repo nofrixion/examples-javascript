@@ -7,7 +7,7 @@
 // 1. Create a user access token in the sandbox portal at:
 //    https://portal-sandbox.nofrixion.com.
 // 2. Set the token as an environment variable in your console:
-//    set NOFRIXION_SANDBOX_TOKEN=<JWT token from previous step>
+//    set NOFRIXION_USER_TOKEN=<JWT token from previous step>
 // 3. Run the script in a browser or using node.js
 // 4. If successful a list of transactions and some metadata will be displayed.
 //-----------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 const fetch = require('cross-fetch');
 
 // Remember, the JWT access token must be securely store - this example uses an environment variable
-const jwtToken = process.env.NOFRIXION_SANDBOX_TOKEN;
+const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
 // need to specify the account to get transactions for
 var accountId = 'A120P0JR';
