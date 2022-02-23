@@ -1,6 +1,7 @@
 //-----------------------------------------------------------------------------
-// Description: Example of calling the NoFrixion MoneyMoov API paymentrequests/{id} 
-// GET method. It returns the details of the specified payment request.
+// Description: Example of calling the NoFrixion MoneyMoov API 
+// paymentrequests/{id}/pisp/providers GET method. It returns a list  
+// of PISP payment providers.
 //
 // Usage:
 // 1. Create a MERCHANT access token in the sandbox portal at:
@@ -8,7 +9,8 @@
 // 2. Set the token as an environment variable in your console:
 //    set NOFRIXION_MERCHANT_TOKEN=<JWT token from previous step>
 // 3. Run the script in a browser or using node.js
-// 4. If successful the JSON object containing the payment request data will be displayed.
+
+// 4. If successful user a list of PISP providers will be displayed.
 //-----------------------------------------------------------------------------
 
 // These modules allow the code to run on Node.js, they aren't required if running in a browser.
@@ -27,10 +29,10 @@ const options = {
     }
 };
 
-var paymentRequestID = '969b0c5c-8804-4c43-11f3-08d9f4f51c4a';
+var paymentRequestID = '18fc90ae-0086-4ef3-8216-08d9f1deec34';
 
-fetch(`${baseUrl}/${paymentRequestID}`, options)
+fetch(`${baseUrl}/${paymentRequestID}/pisp/providers`, options)
     .then(response => response.json())
-    // the response JSON contains the payment request details.
+    // the response body is an array of JSON objects representing PISP providers.
     .then(responseJson => console.log(responseJson))
     .catch(err => console.error(err));

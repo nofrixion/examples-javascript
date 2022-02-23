@@ -8,8 +8,8 @@
 // 2. Set the token as an environment variable in your console:
 //    set NOFRIXION_MERCHANT_TOKEN=<JWT token from previous step>
 // 3. Run the script in a browser or using node.js
-// 4. If successful the JSON object confirming the payment request data
-//    will be displayed.
+// 4. If successful the JSON object showing the updated the payment request 
+//    data will be displayed.
 //-----------------------------------------------------------------------------
 
 // These modules allow the code to run on Node.js, they aren't required if running in a browser.
@@ -24,12 +24,12 @@ const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/paymentrequests';
 // Example form data
 const form = new FormData();
 form.append('MerchantID', 'AB4476A1-8364-4D13-91CE-F4C4CA4EE6BE');
-form.append('Amount', '0.99');
+form.append('Amount', '1.99');
 form.append('Currency', 'EUR');
 form.append('CustomerID', 'C202202024158');
 form.append('OrderID', 'Sample order');
 form.append('PaymentMethodTypes', 'card,pisp'); // BTC lightning payments coming soon!
-form.append('Description', 'API Payment request');
+form.append('Description', 'Updated payment request');
 // URLs to integrate with merchant's site (required for card payments)
 form.append('OriginUrl', 'https://some.origin.url');
 form.append('CallbackUrl', 'https://some.callback.url');
@@ -45,7 +45,7 @@ form.append('CardIgnoreCVN', 'true');
 // => see https://api-sandbox.nofrixion.com/swagger/index.html for a complete reference.
 
 const options = {
-    method: 'POST',
+    method: 'PUT',
     headers: {
         Accept: 'application/json',
         Authorization: 'Bearer ' + jwtToken
@@ -53,8 +53,10 @@ const options = {
     body: form
 };
 
-fetch(baseUrl, options)
+var paymentRequestID  = '969b0c5c-8804-4c43-11f3-08d9f4f51c4a'
+
+fetch(`${baseUrl}/${paymentRequestID}`, options)
     .then(response => response.json())
-    // the response JSON contains the newly created payment request details.
+    // the response JSON contains the updated payment request details.
     .then(responseJson => console.log(responseJson))
     .catch(err => console.error(err));
