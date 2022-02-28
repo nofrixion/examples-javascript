@@ -20,7 +20,7 @@ const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
 const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/user';
 
-const options = { method: 'GET', headers: { Accept: 'text/plain', Authorization: 'Bearer ' + jwtToken } };
+const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
 fetch(baseUrl, options)
     .then(response => response.json())
