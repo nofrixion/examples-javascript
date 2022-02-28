@@ -19,6 +19,9 @@ const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
 const url = 'https://api-sandbox.nofrixion.com/api/v1/payouts';
 
+// Note optional url paramaters for paging the payout list are exposed in the API
+// - see https://api-sandbox.nofrixion.com/swagger/index.html for full details
+
 const options = {
     method: 'GET',
     headers: {
