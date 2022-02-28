@@ -19,9 +19,9 @@ const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
 const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/user/tokens';
 
-const options = { method: 'DELETE', headers: { Accept: 'text/plain', Authorization: 'Bearer ' + jwtToken } };
+const options = { method: 'DELETE', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
-var tokenID = 'dad3ef3f-6732-4448-b363-6434a256d5ac';
+var tokenID = '0151aff6-cb28-40a7-bec4-e0a21cf74d3e';
 
 fetch(`${baseUrl}/${tokenID}`, options)
     .then(response => response.status)

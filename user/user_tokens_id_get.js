@@ -20,9 +20,9 @@ const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
 const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/user/tokens';
 
-const options = { method: 'GET', headers: { Accept: 'text/plain', Authorization: 'Bearer ' + jwtToken } };
+const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
-var tokenID = '042a5ab9-3f36-4d6e-a7c8-fcdc901c7e2d';
+var tokenID = '0151aff6-cb28-40a7-bec4-e0a21cf74d3e';
 
 fetch(`${baseUrl}/${tokenID}`, options)
     .then(response => response.json())
