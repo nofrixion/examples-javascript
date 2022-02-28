@@ -24,6 +24,6 @@ const options = { method: 'GET', headers: { Accept: 'application/json', Authoriz
 
 fetch(url, options)
     .then(response => response.json())
-    // Returns JSON object contains an array of authorised merchants.
+    // Returned JSON object contains an array of authorised merchants.
     .then(responseJson => console.log(responseJson.merchants))
     .catch(err => console.error(err));
