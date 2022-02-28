@@ -12,28 +12,28 @@
 //-----------------------------------------------------------------------------
 
 // These modules allow the code to run on Node.js, they aren't required if running in a browser.
-const fetch = require("cross-fetch");
+const fetch = require('cross-fetch');
 const FormData = require('form-data');
 
 // Remember, the JWT access token must be securely store - this example uses an environment variable
 const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
-const url = "https://api-sandbox.nofrixion.com/api/v1/payouts/transfer/";
+const url = 'https://api-sandbox.nofrixion.com/api/v1/payouts/transfer/';
 
 // Build transferData object.
 let transferData = new FormData();
-transferData.append("Amount", "1.00");
-transferData.append("Currency", "EUR");
-transferData.append("SourceAccount", "A120P0JR");
-transferData.append("DestinationAccount", "A120R2Y3");
-transferData.append("Reference", "My reference");
-transferData.append("ExternalReference", "Ext reference");
+transferData.append('Amount', '1.00');
+transferData.append('Currency', 'EUR');
+transferData.append('SourceAccount', 'A120P0JR');
+transferData.append('DestinationAccount', 'A120R2Y3');
+transferData.append('Reference', 'My reference');
+transferData.append('ExternalReference', 'Ext reference');
 
 const options = {
-    method: "POST",
+    method: 'POST',
     headers: {
-        Accept: "application/json",
-        Authorization: "Bearer " + jwtToken
+        Accept: 'application/json',
+        Authorization: 'Bearer ' + jwtToken
     },
     body: transferData
 };

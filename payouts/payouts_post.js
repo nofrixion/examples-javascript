@@ -8,7 +8,7 @@
 // 2. Set the token as an environment variable in your console:
 //    set NOFRIXION_USER_TOKEN=<JWT token from previous step>
 // 3. Run the script in a browser or using node.js
-// 4. If successful user the newly created payout ID will be displayed.
+// 4. If successful user the newly created payout object will be displayed.
 //-----------------------------------------------------------------------------
 
 // These modules allow the code to run on Node.js, they aren't required if running in a browser.
@@ -24,7 +24,7 @@ const url = 'https://api-sandbox.nofrixion.com/api/v1/payouts';
 const form = new FormData();
 form.append('AccountID', 'A120P0JR');
 form.append('Currency', 'EUR');
-form.append('Amount', '0.01');
+form.append('Amount', '12.34');
 form.append('YourReference', 'Sender ref');
 form.append('DestinationIBAN', 'GB33BUKB20201555555555');
 form.append('DestinationAccountName', 'Test Account');
@@ -42,6 +42,6 @@ options.body = form;
 
 fetch(url, options)
     .then(response => response.json())
-    // the response text is the payout ID of the newly created payout.
+    // Response object containsd details of the newly created payout.
     .then(responseJson => console.log(responseJson))
     .catch(err => console.error(err));
