@@ -6,7 +6,7 @@
 // 1. Create a user access token in the sandbox portal at:
 //    https://portal-sandbox.nofrixion.com.
 // 2. Set the token as an environment variable in your console:
-//    set NOFRIXION_SANDBOX_TOKEN=<JWT token from previous step>
+//    set NOFRIXION_USER_TOKEN=<JWT token from previous step>
 // 3. Run the script using node.js or a browser
 // 4. If successful a GUID, representing your user ID, will be displayed on 
 //    the console.
@@ -16,12 +16,12 @@
 const fetch = require('cross-fetch');
 
 // Remember, the JWT access token must be securely store - this example uses an environment variable
-const jwtToken = process.env.NOFRIXION_SANDBOX_TOKEN;
+const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
-const options = { method: 'GET', headers: { Accept: 'text/plain', Authorization: 'Bearer ' + jwtToken } };
+const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
 fetch('https://api-sandbox.nofrixion.com/api/v1/metadata/whoami', options)
-    .then(response => response.text())
+    .then(response => response.json())
     // The UserID (in UUID form) should appear in console.
-    .then(response => console.log(response))
+    .then(responseJson => console.log(responseJson))
     .catch(err => console.error(err));

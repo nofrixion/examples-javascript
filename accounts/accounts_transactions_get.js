@@ -26,12 +26,12 @@ var queryParams = '?size=10'
 
 var url = `https://api-sandbox.nofrixion.com/api/v1/accounts/${accountId}/transactions${queryParams}`;
 
-const options = { method: 'GET', headers: { Accept: 'text/plain', Authorization: 'Bearer ' + jwtToken } };
+const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
 fetch(url, options)
     .then(response => response.json())
     .then(responseJson => {
-        // the JSON response object contains an array of transactions, oldest first, the size specified in the query paramater (default =20)
+        // the JSON response object contains an array of transactions, oldest first, of the size specified in the query paramater (default=20)
         // it also contains properties detailing the current parameter settings, total number of transactions and total number of pages (starting at 0)
         console.log(responseJson);
     })

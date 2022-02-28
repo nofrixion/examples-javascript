@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 // Description: Example of calling the NoFrixion MoneyMoov API Accounts Get
-// method. It provides a convenient way to retrieve a list of your payment
+// method. It provides a convenient way to retrieve a list of your merchant
 // accounts.
 //
 // Usage:
@@ -20,7 +20,7 @@ const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
 const url = 'https://api-sandbox.nofrixion.com/api/v1/accounts';
 
-const options = { method: 'GET', headers: { Accept: 'text/plain', Authorization: 'Bearer ' + jwtToken } };
+const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
 fetch(url, options)
     .then(response => response.json())

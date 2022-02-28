@@ -19,7 +19,9 @@ const jwtToken = process.env.NOFRIXION_MERCHANT_TOKEN;
 
 const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/paymentrequests';
 
-const options = {
+var paymentRequestID = '969b0c5c-8804-4c43-11f3-08d9f4f51c4a';
+
+var options = {
     method: 'GET',
     headers: {
         Accept: 'application/json',
@@ -27,7 +29,6 @@ const options = {
     }
 };
 
-var paymentRequestID = '969b0c5c-8804-4c43-11f3-08d9f4f51c4a';
 
 fetch(`${baseUrl}/${paymentRequestID}`, options)
     .then(response => response.json())
