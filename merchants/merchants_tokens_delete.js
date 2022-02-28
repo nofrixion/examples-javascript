@@ -13,7 +13,7 @@
 //-----------------------------------------------------------------------------
 
 // This module allows the code to run on Node.js, it's not required if running in a browser.
-const fetch = require("cross-fetch");
+const fetch = require('cross-fetch');
 
 // Remember, the JWT access token must be securely store - this example uses an environment variable
 const jwtToken = process.env.NOFRIXION_USER_TOKEN;
@@ -21,12 +21,12 @@ const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 const url = 'https://api-sandbox.nofrixion.com/api/v1/merchants/tokens';
 
 // need to specify tokenId to delete
-var tokenId = "38baa438-88da-4f19-bb1c-03ad6384901f";
+var tokenId = '0b070538-58b2-49d0-8769-738d2538d161';
 
 const options = {
-    method: "DELETE",
+    method: 'DELETE',
     headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: "Bearer " + jwtToken
     }
 };

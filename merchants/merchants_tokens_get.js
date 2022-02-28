@@ -19,16 +19,12 @@ const fetch = require('cross-fetch');
 const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
 const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/merchants';
-var merchantId = 'ab4476a1-8364-4d13-91ce-f4c4ca4ee6be';
+var merchantId = '6f80138d-870b-4b07-8bc4-a4fd33a0d30f';
 
 const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
 fetch(`${baseUrl}/${merchantId}/tokens`, options)
     .then(response => response.json())
-    .then(responseJson => {
-        // Returns JSON array of merchant tokens.
-        console.log(responseJson);
-    })
+    // Returns JSON array of merchant tokens.
+    .then(responseJson => console.log(responseJson))
     .catch(err => console.error(err));
-
-

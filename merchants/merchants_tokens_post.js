@@ -13,30 +13,30 @@
 //-----------------------------------------------------------------------------
 
 // These modules allow the code to run on Node.js, they aren't required if running in a browser.
-const fetch = require("cross-fetch");
+const fetch = require('cross-fetch');
 const FormData = require('form-data');
 
 // Remember, the JWT access token must be securely stored - this example uses an environment variable
 const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
-const url = "https://api-sandbox.nofrixion.com/api/v1/merchants/tokens";
+const url = 'https://api-sandbox.nofrixion.com/api/v1/merchants/tokens';
 
 // Build data object.
 let data = new FormData();
-data.append("MerchantId", "ab4476a1-8364-4d13-91ce-f4c4ca4ee6be");
-data.append("Description", "API created token");
+data.append('MerchantID', '6f80138d-870b-4b07-8bc4-a4fd33a0d30f');
+data.append('Description', 'API created token');
 
 const options = {
-    method: "POST",
+    method: 'POST',
     headers: {
-        Accept: "application/json",
-        Authorization: "Bearer " + jwtToken
+        Accept: 'application/json',
+        Authorization: 'Bearer ' + jwtToken
     },
     body: data
 };
 
 fetch(url, options)
     .then(response => response.json())
-    // Merchant token returned in responseJson => MAKE SURE YOU SAVE THIS! (we don't store it)
-    .then(responseJson => console.log(responseJson.token))
+    // The new merchant token is returned in responseJson => MAKE SURE YOU SAVE THIS! (we don't store it)
+    .then(responseJson => console.log(responseJson))
     .catch(err => console.error(err));

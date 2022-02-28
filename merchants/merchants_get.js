@@ -7,9 +7,9 @@
 // 1. Create a user access token in the sandbox portal at:
 //    https://portal-sandbox.nofrixion.com.
 // 2. Set the token as an environment variable in your console:
-//    set NOFRIXION_SANDBOX_TOKEN=<JWT token from previous step>
+//    set NOFRIXION_USER_TOKEN=<JWT token from previous step>
 // 3. Run the script in a browser or using node.js
-// 4. If successful user the associated merchants will be displayed.
+// 4. If successful the user's associated merchants will be displayed.
 //-----------------------------------------------------------------------------
 
 // This package allows the script to run on node.js, not required for browser use.
@@ -24,12 +24,6 @@ const options = { method: 'GET', headers: { Accept: 'application/json', Authoriz
 
 fetch(url, options)
     .then(response => response.json())
-    .then(responseJson => {
-        // Returns JSON objects containing basic details about the user's current merchant context and an array of 
-        // also authorised merchants.
-        console.log(responseJson.merchants);
-        // If an array of merchant id's associated with the current user is all that is required extract as follows:
-        var merchantIds = responseJson.merchants.map(merchant => merchant.id);
-        console.log(merchantIds)
-    })
+    // Returns JSON objects containing an array of authorised merchants.
+    .then(responseJson => console.log(responseJson.merchants))
     .catch(err => console.error(err));
