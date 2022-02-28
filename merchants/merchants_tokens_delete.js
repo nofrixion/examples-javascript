@@ -18,7 +18,7 @@ const fetch = require('cross-fetch');
 // Remember, the JWT access token must be securely store - this example uses an environment variable
 const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
-const url = 'https://api-sandbox.nofrixion.com/api/v1/merchants/tokens';
+const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/merchants/tokens';
 
 // need to specify tokenId to delete
 var tokenId = '0b070538-58b2-49d0-8769-738d2538d161';
@@ -31,7 +31,7 @@ const options = {
     }
 };
 
-fetch(`${url}/${tokenId}`, options)
+fetch(`${baseUrl}/${tokenId}`, options)
     .then(response => response.status)
     // Should get response status 200 on success
     .then(respStatus => console.log(respStatus))
