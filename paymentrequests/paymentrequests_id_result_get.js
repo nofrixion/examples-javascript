@@ -27,7 +27,7 @@ const options = {
     }
 };
 
-var paymentRequestID = '2991a90d-1887-4cf8-4f6d-08d9f2bb1cd8';
+var paymentRequestID = '59c8046d-46d6-4bf3-9d2f-08d9f6a98048';
 
 fetch(`${baseUrl}/${paymentRequestID}/result`, options)
     .then(response => response.json())
