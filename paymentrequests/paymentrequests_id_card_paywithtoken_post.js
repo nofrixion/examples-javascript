@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------------
 // Description: Example of calling the NoFrixion MoneyMoov API 
-// paymentrequests/{id}/card/capture POST method. It captures payment for a   
-// previously authorised card payment.
+// paymentrequests/{id}/card/paywithtoken POST method. It submits payment request   
+// using a tokenised card to the payment gateway.
 //
 // Usage:
 // 1. Create a MERCHANT access token in the sandbox portal at:
