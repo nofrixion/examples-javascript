@@ -31,6 +31,6 @@ var paymentRequestID = 'e111f205-e966-4f2f-988a-08d9f65a6611';
 
 fetch(`${baseUrl}/${paymentRequestID}/result`, options)
     .then(response => response.json())
-    // the response JSON contains the payment request details.
+    // the returned JSON contains the payment request response object.
     .then(responseJson => console.log(responseJson))
     .catch(err => console.error(err));
