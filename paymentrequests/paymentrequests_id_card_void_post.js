@@ -22,14 +22,19 @@ const jwtToken = process.env.NOFRIXION_MERCHANT_TOKEN;
 
 const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/paymentrequests';
 
-var paymentRequestID = '1744b1f6-c92f-43ce-9889-08d9f65a6611';
+var paymentRequestID = 'e111f205-e966-4f2f-988a-08d9f65a6611';
+
+// need to specify authorizationID of transaction to be voided
+var form = new FormData();
+form.append('authorizationID', '6466271416006555404002');
 
 var options = {
     method: 'POST',
     headers: {
         Accept: 'application/json',
         Authorization: 'Bearer ' + jwtToken
-    }
+    },
+    body: form
 };
 
 fetch(`${baseUrl}/${paymentRequestID}/card/void`, options)
