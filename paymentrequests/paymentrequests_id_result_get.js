@@ -1,6 +1,7 @@
 //-----------------------------------------------------------------------------
-// Description: Example of calling the NoFrixion MoneyMoov API paymentrequests/{id} 
-// GET method. It returns the details of the specified payment request.
+// Description: Example of calling the NoFrixion MoneyMoov API  
+// paymentrequests/{id}/result GET method. It returns the details of the specified 
+// payment request.
 //
 // Usage:
 // 1. Create a MERCHANT access token in the sandbox portal at:
