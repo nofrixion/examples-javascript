@@ -22,11 +22,12 @@ const jwtToken = process.env.NOFRIXION_MERCHANT_TOKEN;
 
 const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/paymentrequests';
 
-var paymentRequestID = 'c97e3530-812f-45b8-11fc-08d9f4f51c4a';
+var paymentRequestID = '187ec02c-860f-4414-ccb5-08da00f4d66d';
 
-// Example form data
+// Request body must contain amount to be captured and authorizationID
 var form = new FormData();
-form.append('amount', '0.50');
+form.append('Amount', '0.10');
+form.append('AuthorizationID', '6467848603196559404005');
 
 var options = {
     method: 'POST',
