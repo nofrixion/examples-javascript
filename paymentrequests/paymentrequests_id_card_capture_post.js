@@ -26,8 +26,8 @@ var paymentRequestID = '187ec02c-860f-4414-ccb5-08da00f4d66d';
 
 // Request body must contain amount to be captured and authorizationID
 var form = new FormData();
-form.append('Amount', '0.10');
 form.append('AuthorizationID', '6467848603196559404005');
+form.append('Amount', '0.10');
 
 var options = {
     method: 'POST',
