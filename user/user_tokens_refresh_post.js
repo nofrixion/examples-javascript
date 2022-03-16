@@ -22,7 +22,7 @@ const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/user/tokens/refresh';
 
 // Example form data
 const formData = new FormData();
-formData.append('refreshToken', 'v1.Mumv0QKNnuszGS96ZKxBHSZrZQVItqgWOk46LToOlYN3PeeqOKyWqBUofJOCxXgdvqVBq8WOuXlIilBTlO0rcKc');
+formData.append('refreshToken', 'v1.NOmv0QKNnuszGS96ZKxBHSYTUxUXo-JLP_8c-fp5RX5zzZ-hHpXN9f4_OkdOA_UrbAxRemlGEL1YbYQhY9dl_dI');
 
 const options = {
     method: 'POST',
