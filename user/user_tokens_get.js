@@ -20,12 +20,15 @@ const jwtToken = process.env.NOFRIXION_USER_TOKEN;
 
 const baseUrl = 'https://api-sandbox.nofrixion.com/api/v1/user/tokens';
 
+// Note optional url paramaters for paging the token list are exposed in the API
+// - see https://api-sandbox.nofrixion.com/swagger/index.html for full details
+
 const options = { method: 'GET', headers: { Accept: 'application/json', Authorization: 'Bearer ' + jwtToken } };
 
 fetch(baseUrl, options)
     .then(response => response.json())
     .then(responseJson => {
-        // Returns JSON object containing authenticated user's access tokens.
+        // Returns JSON object containing a page of the authenticated user's access tokens.
         console.log(responseJson);
     })
     .catch(err => console.error(err));
